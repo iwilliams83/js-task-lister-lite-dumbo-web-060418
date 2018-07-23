@@ -34,27 +34,11 @@ function init(){
     const allTasks = document.querySelectorAll('.task')
     const allTasksArray = [...allTasks]
     const sortedTasks = allTasksArray.sort(function(a, b){
-      return parseInt(a.value) - parseInt(b.value)
+      return parseInt(a.dataset.value) - parseInt(b.dataset.value)
     })
-    //debugger
     taskList.innerHTML = ''
     sortedTasks.forEach(function(task){
-      taskList.innerHTML += task;
+      taskList.innerHTML += task.outerHTML;
     })
-
   })
-  //
-  // const highTasks = document.querySelectorAll('.high')
-  // const mediumTasks = document.querySelectorAll('.medium')
-  // const lowTasks = document.querySelectorAll('.low')
-  // taskList.innerHTML = ''
-  // highTasks.forEach(function(task){
-  //   taskList.innerHTML += `<li class="high">${task.innerHTML}</li>`
-  // })
-  // mediumTasks.forEach(function(task){
-  //   taskList.innerHTML += `<li class="medium">${task.innerHTML}</li>`
-  // })
-  // lowTasks.forEach(function(task){
-  //   taskList.innerHTML += `<li class="low">${task.innerHTML}</li>`
-  // })
 }
